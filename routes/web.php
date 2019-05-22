@@ -27,3 +27,6 @@ Route::get('/', 'Home\IndexController@index');
 Route::group([],function(){
    
 });
+
+
+Route::get('admin/insert');
