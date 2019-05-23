@@ -20,7 +20,7 @@ class LoginController extends Controller
  public function index()
  {
 
- 	return view('Home.Login.login');
+ 	return view('home.Login.login');
  }
 
 
@@ -92,7 +92,7 @@ class LoginController extends Controller
  public function zhuce()
  {
 
- 	return view('Home.Login.zhuce');
+ 	return view('home.Login.zhuce');
  }
 
 
@@ -157,6 +157,7 @@ public function dozhuce(Request $request)
         $param=rand(1111,9999);
         $mobile= $request->phone;//$_POST['yzmtel']
         $uid = "";
+        
         //70字内（含70字）计一条，超过70字，按67字/条计费，超过长度短信平台将会自动分割为多条发送。分割后的多条短信将按照具体占用条数计费。
         echo $ucpass->SendSms($appid,$templateid,$param,$mobile,$uid);
         session(['yzm'=>$param]);

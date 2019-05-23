@@ -1,4 +1,4 @@
-@extends('common/index')	
+@extends('common/admin')	
 @section('title',$title)
 @section('content')
  <body>

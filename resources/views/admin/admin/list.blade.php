@@ -87,13 +87,13 @@
             <td>{{date('Y年m月d日 H时i分s秒',$v->create_time)}}</td>
             <td class="td-manage">
               <ul><li id='ull'>
-              <a title="编辑"  onclick="x_admin_show('编辑','/admin/user/{{$v->id}}/edit')" href="javascript:;">
+              <a title="编辑"  onclick="x_admin_show('编辑','/admin/guanli/{{$v->id}}/edit')" href="javascript:;">
                 <i class="layui-icon">&#xe642;</i>
               </a>
              
               </li>
               <li>
-              <form action="/admin/user/{{$v->id}}" method="post">
+              <form action="/admin/guanli/{{$v->id}}" method="post">
               <button style="background:#fff; border:0;">
               <a title="删除" href="javascript:;">
                 <i class="layui-icon">&#xe640;</i>

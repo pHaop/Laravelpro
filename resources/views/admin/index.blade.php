@@ -1,5 +1,5 @@
-@extends('common/index')	
-@section('title',$title)
+@extends('common/admin')	
+
 @section('content')
 <blockquote class="layui-elem-quote">欢迎使用 简言博客后台模版!</blockquote>
     <fieldset class="layui-elem-field">

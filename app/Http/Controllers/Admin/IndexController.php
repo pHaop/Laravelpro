@@ -11,6 +11,6 @@ class IndexController extends Controller
     {
     	// dump(session('code'));
     	// dump(session('id'));
-    	return view('Admin.index');
+    	return view('admin.index');
     }
 }

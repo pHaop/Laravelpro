@@ -8,7 +8,7 @@ use App\Http\Requests\FormRequest;
 
 use Hash;
 
-use App\Model\Admin\User;
+use App\Model\Admin\Admin;
 class AdminController extends Controller
 {
     /**
@@ -20,15 +20,15 @@ class AdminController extends Controller
     {   
         // session(['id'=>'']);
         
-        $img = User::where('id',session('id'))->first();
+        $img = Admin::where('id',session('id'))->first();
 
-        $data = User::count();
+        $data = Admin::count();
 
         $uname = $request->uname;
        
-    	$rs = User::where('username','like','%'.$uname.'%')->paginate(5);
+    	$rs = Admin::where('username','like','%'.$uname.'%')->paginate(5);
 
-        return view('Admin.admin.list',['rs'=>$rs,'img'=>$img,'data'=>$data]);
+        return view('admin.admin.list',['rs'=>$rs,'img'=>$img,'data'=>$data]);
     }
 
     /**
@@ -38,7 +38,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        return view('Admin.admin.add');
+        return view('admin.admin.add');
     }
 
     /**
@@ -72,7 +72,7 @@ class AdminController extends Controller
         
         $rs['password'] = Hash::make($request->password);
 
-        $arr = User::create($rs);
+        $arr = Admin::create($rs);
 
         return redirect('admin/user');
 
@@ -99,8 +99,8 @@ class AdminController extends Controller
      */
     public function edit($id)
     {
-       $rs = User::find($id);
-       return view('Admin/admin/edit',['rs'=>$rs]);
+       $rs = Admin::find($id);
+       return view('admin/admin/edit',['rs'=>$rs]);
     }
 
     /**
@@ -113,7 +113,7 @@ class AdminController extends Controller
     public function update(Request $request, $id)
     {
     	$rs = $request->except('_token','_method');
-
+         
     	if($request->hasFile('img')){
 
             //获取图片上传的信息
@@ -132,7 +132,7 @@ class AdminController extends Controller
         }
         // dump($rs);
     	// dump($request->input());
-        $arr = User::where('id',$id)->update($rs);
+        $arr = Admin::where('id',$id)->update($rs);
         if($arr)
         {
           echo "<script>parent.location.reload();</script>";
@@ -150,10 +150,10 @@ class AdminController extends Controller
      */
     public function destroy($id)
     {
-    	$rs = User::destroy($id);
+    	$rs = Admin::destroy($id);
     	if($rs){
 
-            return redirect('/admin/user')->with('success','删除成功');
+            return redirect('/admin/guanli')->with('success','删除成功');
         } else {
 
             return back()->with('error','删除失败');

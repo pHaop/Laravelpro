@@ -18,7 +18,11 @@ class UserController extends Controller
     {  
        
        $username = $request->username;
-       $rs = User::where('username','like','%'.$username.'%')->paginate(10);
+
+       $rs = User::where('username','like','%'.$username.'%')->paginate(7);
+
+       // dump($rs);
+
        $data = User::count();
         return view('admin.user.index',
             ['rs'=>$rs,

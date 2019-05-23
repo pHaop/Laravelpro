@@ -58,17 +58,56 @@
                     </a>
                     <ul class="sub-menu">
                     <li>
-                        <a href="/admin/user">
+                        <a href="/admin/guanli">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>管理员列表</cite>
                         </a>
                     </li >
                      <li>
-                        <a href="/admin/user/create">
+                        <a href="/admin/guanli/create">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>管理员添加</cite>
                         </a>
                     </li >
+                </ul></li>
+                     <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe726;</i>
+                    <cite>用户管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a  href="/admin/user">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>用户列表</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a href="/admin/user/create">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>添加用户</cite>
+                        </a>
+                    </li >
+                   
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe723;</i>
+                    <cite>订单管理</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="order-list.html">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>订单列表</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
+            <li>
                     
            
         </ul>

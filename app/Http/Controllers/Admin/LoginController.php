@@ -10,15 +10,13 @@ use Gregwar\Captcha\PhraseBuilder;
 use Hash;
 
 use Session;
-use App\Model\Admin\User;
+use App\Model\Admin\Admin;
 class LoginController extends Controller
 {
     public function login()
     {
         // dump(session('code'));
-
-        
-    	return view('Admin.login.login');
+    	return view('admin.login.login');
     }
 
     public function dologin(Request $request)
@@ -26,7 +24,7 @@ class LoginController extends Controller
 
     	 $uname = $request->username;
 
-    	 $rs = User::where('username',$uname)->first();
+    	 $rs = Admin::where('username',$uname)->first();
          
          // dump($rs);
     	 if(!$rs)
@@ -82,14 +80,14 @@ class LoginController extends Controller
     public function pass(Request $request)
     {
 
-        return view('Admin/login/pass');
+        return view('admin/login/pass');
 
     }
 
      public function dopass(Request $request)
     {
         
-        $rs = User::where('id',session('id'))->first();
+        $rs = Admin::where('id',session('id'))->first();
 
         if(!Hash::check($request->password,$rs->password))
         {
@@ -104,7 +102,7 @@ class LoginController extends Controller
         $re['password']=Hash::make($request->newpass);
          
         
-        $result = User::where('id',session('id'))->update($re);
+        $result = Admin::where('id',session('id'))->update($re);
 
         // dump($result);
 

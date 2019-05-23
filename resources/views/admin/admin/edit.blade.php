@@ -28,7 +28,7 @@
   
   <body>
     <div class="x-body">
-        <form class="layui-form" action="/admin/user/{{$rs->id}}" method="post" enctype='multipart/form-data'>
+        <form class="layui-form" action="/admin/guanli/{{$rs->id}}" method="post" enctype='multipart/form-data'>
           <div class="layui-form-item">
               <label for="username" class="layui-form-label">
                   <span class="x-red">*</span>登录名
@@ -54,10 +54,9 @@
               <div class="layui-input-block">
                 <input type="radio" name="status"  value="0" title="开启" @if($rs->status==0)checked @endif>
                 <input type="radio" name="status"  value="1" title="禁用" @if($rs->status==1)checked @endif>
-                
               </div>
           </div>
-          {{ method_field('PUT') }}
+          {{method_field('PUT') }}
           {{csrf_field()}}
           <div class="layui-form-item">
               <label for="L_repass" class="layui-form-label">

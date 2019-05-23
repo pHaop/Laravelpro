@@ -14,7 +14,6 @@
     <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
     <script src="/admins/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/admins/js/xadmin.js"></script>
-
 </head>
 <body class="login-bg">
     

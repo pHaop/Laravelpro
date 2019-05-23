@@ -4,7 +4,7 @@ namespace App\Model\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Admin extends Model
 {
     //
      /**
@@ -12,13 +12,11 @@ class User extends Model
      *
      * @var string
      */
-    protected $table = 'user';
+    protected $table = 'user_admin';
 
     protected $primaryKey = 'id';
 
     public $timestamps = false;
     
     protected $guarded = [];
-
-
 }

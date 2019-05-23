@@ -1,32 +1,13 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-//后台
-Route::group([],function(){
-    //后台首页
-	Route::get('admin','Admin\IndexController@index');
-	//后台管理员
-	Route::resource('/admin/user','Admin\UserController');
-	
-});
 
-//前台首页
-Route::get('/', 'Home\IndexController@index');
 
-//前台
- 
-Route::group([],function(){
-   
-});
+
+
+
+
+
+
 
 
 
@@ -114,13 +95,15 @@ Route::group(['middleware'=>'login'], function(){
 	//后台的首页
 	Route::get('/admin','Admin\IndexController@index');
     //管理员管理
-	Route::resource('/admin/user', 'Admin\AdminController');
+	Route::resource('/admin/guanli', 'Admin\AdminController');
 	//修改密码
 	Route::any('/admin/pass', 'Admin\LoginController@pass');
 	//处理密码数据
 	Route::any('/admin/dopass', 'Admin\LoginController@dopass');
 	//后台推出
     Route::any('/admin/out','Admin\LoginController@out');
+    //h后台用户
+    Route::resource('/admin/user','Admin\UserController');
 	//后台添加页
 	// Route::any('/admin/create','Admin\UserController@create');
 	//后台用户页
