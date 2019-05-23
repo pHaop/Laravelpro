@@ -7,8 +7,10 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
-    public function index(){
-
-    	return view('admin.index',['title'=>'后台的首页']);
+    public function index()
+    {
+    	// dump(session('code'));
+    	// dump(session('id'));
+    	return view('Admin.index');
     }
 }
